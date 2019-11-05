@@ -1,0 +1,5 @@
+rootProject.name = 'ConsultorioOdontologico'
+
+include ':domain',
+		':application',
+        ':infrastructure'
