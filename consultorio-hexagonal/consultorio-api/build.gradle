@@ -1,0 +1,5 @@
+
+dependencies {
+    compile project(':consultorio-domain')
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+}

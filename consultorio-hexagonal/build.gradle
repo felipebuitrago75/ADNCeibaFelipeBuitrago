@@ -1,0 +1,36 @@
+plugins {
+    id "base"
+    id "io.spring.dependency-management" version "1.0.6.RELEASE"
+}
+
+description = "Consultorio"
+
+
+allprojects {
+    group = 'co.com'
+    version = '0.0.1-SNAPSHOT'
+
+    apply plugin: 'java'
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    repositories {
+        maven { url "http://repo.maven.apache.org/maven2" }
+        mavenCentral()
+    }
+}
+
+subprojects {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    apply plugin: 'io.spring.dependency-management'
+
+    dependencyManagement {
+        dependencies {
+            dependency 'org.springframework.boot:spring-boot-starter-web:2.1.0.RELEASE'
+        }
+    }
+}
