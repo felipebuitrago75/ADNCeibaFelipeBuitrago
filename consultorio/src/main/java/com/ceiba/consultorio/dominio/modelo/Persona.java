@@ -1,24 +1,14 @@
-package com.ceiba.consultorio.infraestructura;
+package com.ceiba.consultorio.dominio.modelo;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.ceiba.consultorio.dominio.validador.validadorArgumento;
 
-
-@Entity
-@Table(name = "PERSONA")
 public class Persona {
 
-
-	@Id
-	@Column(name = "ID")
+	private static final String CAMPO_OBLIGATORIO = "Este campo es obligatorio ";
 	private Long id;
 
-	@Column(name = "NOMBRE")
 	private String nombre;
 
-	@Column(name = "EDAD")
 	private Integer edad;
 
 	public Long getId() {
@@ -26,14 +16,16 @@ public class Persona {
 	}
 
 	public Persona(Long id, String nombre, Integer edad) {
-		super();
+
+		validadorArgumento.validarCampoObligatorio(nombre, CAMPO_OBLIGATORIO);
+		validadorArgumento.validarCampoObligatorio(edad, CAMPO_OBLIGATORIO);
 		this.id = id;
 		this.nombre = nombre;
 		this.edad = edad;
 	}
 
 	public Persona() {
-		super();
+
 	}
 
 	public void setId(Long id) {
@@ -55,9 +47,5 @@ public class Persona {
 	public void setEdad(Integer edad) {
 		this.edad = edad;
 	}
-
-
-
-
 
 }

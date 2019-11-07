@@ -1,4 +1,4 @@
-package com.ceiba.consultorio.dominio;
+package com.ceiba.consultorio.dominio.excepciones;
 
 public class PersonaException extends RuntimeException {
 

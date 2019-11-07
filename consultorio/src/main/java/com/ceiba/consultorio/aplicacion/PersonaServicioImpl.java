@@ -11,45 +11,41 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ceiba.consultorio.dominio.PersonaServicio;
-import com.ceiba.consultorio.dominio.PersonaRepositorio;
-import com.ceiba.consultorio.infraestructura.Persona;
+import com.ceiba.consultorio.infraestructura.PersonaRepositorioJPA;
+import com.ceiba.consultorio.infraestructura.entidades.PersonaEntidad;
 
 @Service
 public class PersonaServicioImpl implements PersonaServicio {
 
 	@Autowired
-	private PersonaRepositorio personaRepositorio;
+	private PersonaRepositorioJPA personaRepositorioJPA;
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	public static final String EL_LIBRO_NO_SE_ENCUENTRA_DISPONIBLE = "El libro no se encuentra disponible";
-	public static final String PALIDROMO = "los libros pal?ndromos solo se pueden utilizar en la biblioteca";
-	public static final String PRESTADO = "No hay libros disponibles para prestar";
-	public static final String NO_EXISTE = "El libro no existe";
 
 	@Override
-	public void agregarPersona(Persona persona) {
+	public void agregarPersona(PersonaEntidad personaEntidad) {
 
 		try {
-			Optional<Persona> optLibro = personaRepositorio.findById(persona.getId());
-			Persona libroActualizar = optLibro.get();
-			personaRepositorio.save(libroActualizar);
+			Optional<PersonaEntidad> optLibro = personaRepositorioJPA.findById(personaEntidad.getId());
+			PersonaEntidad libroActualizar = optLibro.get();
+			personaRepositorioJPA.save(libroActualizar);
 		} catch (NoSuchElementException nse) {
 
-			personaRepositorio.save(persona);
+			personaRepositorioJPA.save(personaEntidad);
 		}
 
 	}
 
 	@Override
 	public void eliminarPersona(Long id) {
-		personaRepositorio.deleteById(id);
+		personaRepositorioJPA.deleteById(id);
 	}
 
 	@Override
-	public Persona buscarPersonaId(Long id) {
+	public PersonaEntidad buscarPersonaId(Long id) {
 		try {
-			Optional<Persona> optLibro = personaRepositorio.findById(id);
+			Optional<PersonaEntidad> optLibro = personaRepositorioJPA.findById(id);
 			return optLibro.get();
 		} catch (NoSuchElementException nse) {
 			return null;
@@ -58,7 +54,7 @@ public class PersonaServicioImpl implements PersonaServicio {
 	}
 
 	@Override
-	public List<Persona> obtenerPersonas() {
+	public List<PersonaEntidad> obtenerPersonas() {
 		String consultaLibrosDisponibles = "SELECT p FROM Persona p ";
 		return entityManager.createQuery(consultaLibrosDisponibles).getResultList();
 	}
