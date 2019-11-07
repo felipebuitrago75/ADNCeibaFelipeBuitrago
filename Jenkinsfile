@@ -39,15 +39,15 @@ pipeline{
 			 
 			stage('Build project') { 
 			   steps { 
-					sh 'gradle --b ./Consultorio-Back/infrastructure/build.gradle clean'
-					sh 'gradle --b ./Consultorio-Back/infrastructure/build.gradle build'
+					sh 'gradle --b ./consultorio/build.gradle clean'
+					sh 'gradle --b ./consultorio/build.gradle build'
 				}
 			}
 
 			stage('Unit Test & Coverage') {
 				steps {
-				    sh 'gradle --b ./Consultorio-Back/infrastructure/build.gradle test'
-				    sh 'gradle --b ./Consultorio-Back/infrastructure/build.gradle jacocoTestReport'
+				    sh 'gradle --b ./consultorio/build.gradle test'
+				    sh 'gradle --b ./consultorio/build.gradle jacocoTestReport'
 				}
 			}          
 			
