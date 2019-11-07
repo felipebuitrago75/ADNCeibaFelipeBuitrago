@@ -1,6 +1,0 @@
-rootProject.name = 'consultorio-hexagonal'
-include 'consultorio-infrastructure'
-include 'consultorio-domain'
-include 'consultorio-api'
-include 'consultorio-app'
-
