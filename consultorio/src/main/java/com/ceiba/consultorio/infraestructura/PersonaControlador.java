@@ -1,13 +1,22 @@
 package com.ceiba.consultorio.infraestructura;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ceiba.consultorio.aplicacion.comando.ComandoPersona;
+import com.ceiba.consultorio.aplicacion.manejadores.ManejadorActualizarPersona;
 import com.ceiba.consultorio.aplicacion.manejadores.ManejadorCrearPersona;
+import com.ceiba.consultorio.aplicacion.manejadores.ManejadorEliminarPersona;
+import com.ceiba.consultorio.aplicacion.manejadores.ManejadorObtenerPersona;
+import com.ceiba.consultorio.aplicacion.manejadores.ManejadorObtenerPersonas;
 
 @RestController
 @RequestMapping(value = "/consultorio")
@@ -15,8 +24,19 @@ public class PersonaControlador {
 
 	private final ManejadorCrearPersona manejadorCrearPersona;
 
-	public PersonaControlador(ManejadorCrearPersona manejadorCrearPersona) {
+	private final ManejadorEliminarPersona manejadorEliminarPersona;
+
+	private final ManejadorObtenerPersonas manejadorObtenerPersonas;
+
+	private final ManejadorObtenerPersona manejadorObtenerPersona;
+
+	public PersonaControlador(ManejadorCrearPersona manejadorCrearPersona,
+			ManejadorEliminarPersona manejadorEliminarPersona, ManejadorObtenerPersonas manejadorObtenerPersonas,
+			ManejadorObtenerPersona manejadorObtenerPersona) {
 		this.manejadorCrearPersona = manejadorCrearPersona;
+		this.manejadorEliminarPersona = manejadorEliminarPersona;
+		this.manejadorObtenerPersonas = manejadorObtenerPersonas;
+		this.manejadorObtenerPersona = manejadorObtenerPersona;
 	}
 
 	@CrossOrigin(origins = "http://localhost:4200")
@@ -25,24 +45,26 @@ public class PersonaControlador {
 		this.manejadorCrearPersona.ejecutar(comandoPersona);
 
 	}
-/**
+
 	@CrossOrigin(origins = "http://localhost:4200")
 	@DeleteMapping("/eliminarPersona/{ID}")
 	public void eliminarPersona(@PathVariable(name = "ID") Long id) {
-		personaServicio.eliminarPersona(id);
-		;
+		this.manejadorEliminarPersona.ejecutar(id);
+
 	}
 
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/obtenerPersonas")
-	public List<PersonaEntidad> obtenerPersonas() {
-		return personaServicio.obtenerPersonas();
+	public List<ComandoPersona> obtenerPersonas() {
+		return this.manejadorObtenerPersonas.ejecutar();
+
 	}
 
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/buscarPersona/{ID}")
-	public PersonaEntidad buscarPersona(@PathVariable(name = "ID") Long id) {
-		return personaServicio.buscarPersonaId(id);
+	public ComandoPersona buscarPersona(@PathVariable(name = "ID") Long id) {
+		return this.manejadorObtenerPersona.ejecutar(id);
+
 	}
-*/
+
 }

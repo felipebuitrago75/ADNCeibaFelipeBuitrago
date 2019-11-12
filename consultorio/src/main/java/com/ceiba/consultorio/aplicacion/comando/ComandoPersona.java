@@ -8,9 +8,6 @@ public class ComandoPersona {
 
 	private Integer edad;
 
-	public Long getId() {
-		return id;
-	}
 
 	public ComandoPersona(Long id, String nombre, Integer edad) {
 
@@ -21,6 +18,9 @@ public class ComandoPersona {
 	}
 
 
+	public Long getId() {
+		return id;
+	}
 
 	public String getNombre() {
 		return nombre;
@@ -29,6 +29,18 @@ public class ComandoPersona {
 
 	public Integer getEdad() {
 		return edad;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setEdad(Integer edad) {
+		this.edad = edad;
 	}
 
 

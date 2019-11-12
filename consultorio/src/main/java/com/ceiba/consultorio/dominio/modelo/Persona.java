@@ -1,6 +1,6 @@
 package com.ceiba.consultorio.dominio.modelo;
 
-import com.ceiba.consultorio.dominio.validador.validadorArgumento;
+import com.ceiba.consultorio.dominio.validador.ValidadorArgumento;
 
 public class Persona {
 
@@ -17,8 +17,8 @@ public class Persona {
 
 	public Persona(Long id, String nombre, Integer edad) {
 
-		validadorArgumento.validarCampoObligatorio(nombre, CAMPO_OBLIGATORIO);
-		validadorArgumento.validarCampoObligatorio(edad, CAMPO_OBLIGATORIO);
+		ValidadorArgumento.validarCampoObligatorio(nombre, CAMPO_OBLIGATORIO);
+		ValidadorArgumento.validarCampoObligatorio(edad, CAMPO_OBLIGATORIO);
 		this.id = id;
 		this.nombre = nombre;
 		this.edad = edad;

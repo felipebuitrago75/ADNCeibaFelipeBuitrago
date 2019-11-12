@@ -2,9 +2,9 @@ package com.ceiba.consultorio.dominio.validador;
 
 import com.ceiba.consultorio.dominio.excepciones.PersonaException;
 
-public class validadorArgumento {
+public class ValidadorArgumento {
 
-	public validadorArgumento() {
+	public ValidadorArgumento() {
 	}
 
 	public static void validarCampoObligatorio(Object valor, String mensaje) {
