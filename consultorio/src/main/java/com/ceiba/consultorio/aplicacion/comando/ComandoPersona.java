@@ -7,9 +7,11 @@ public class ComandoPersona {
 	private String nombre;
 
 	private Integer edad;
+	
+	private Integer numeroIdentificacion;
 
 
-	public ComandoPersona(Long id, String nombre, Integer edad) {
+	public ComandoPersona(Long id, String nombre, Integer edad,Integer numeroIdentificacion) {
 
 	}
 
@@ -41,6 +43,14 @@ public class ComandoPersona {
 
 	public void setEdad(Integer edad) {
 		this.edad = edad;
+	}
+
+	public Integer getNumeroIdentificacion() {
+		return numeroIdentificacion;
+	}
+
+	public void setNumeroIdentificacion(Integer numeroIdentificacion) {
+		this.numeroIdentificacion = numeroIdentificacion;
 	}
 
 

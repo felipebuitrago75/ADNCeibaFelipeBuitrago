@@ -1,0 +1,37 @@
+<div class="create-container">
+  <h1 *ngIf="!editing">
+      {{ "forms.crear_persona" | translate }}
+  </h1>
+  <h1 *ngIf="editing">
+      {{ "forms.editar_persona" | translate }}
+  </h1>
+  <div class="form">
+    <form [formGroup]="myForm">
+      <div class="form-group">
+        <label>{{ "forms.identificacion" | translate }}</label>
+        <input type="number" class="form-control" formControlName="identificacion" />
+        <span *ngIf="controlHasError('identificacion', 'required')">
+          <strong>{{ "validation.required_field" | translate }}</strong>
+        </span>
+      </div>
+      <div class="form-group">
+        <label>{{ "forms.name" | translate }}</label>
+        <input type="text" class="form-control" formControlName="nombre" />
+        <span *ngIf="controlHasError('nombre', 'required')">
+          <strong>{{ "validation.required_field" | translate }}</strong>
+        </span>
+      </div>
+      <div class="form-group">
+        <label>{{ "forms.edad" | translate }}</label>
+        <input type="number" class="form-control" formControlName="edad" />
+        <span *ngIf="controlHasError('edad', 'required')">
+          <strong>{{ "validation.required_field" | translate }}</strong>
+        </span>
+      </div>
+
+      <button class="btn btn-primary" (click)="store()">
+          {{ "forms.save" | translate }}
+      </button>
+    </form>
+  </div>
+</div>

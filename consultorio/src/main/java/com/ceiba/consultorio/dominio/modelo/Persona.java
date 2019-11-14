@@ -11,17 +11,20 @@ public class Persona {
 
 	private Integer edad;
 
+	private Integer numeroIdentificacion;
+
 	public Long getId() {
 		return id;
 	}
 
-	public Persona(Long id, String nombre, Integer edad) {
+	public Persona(Long id, String nombre, Integer edad, Integer numeroIdentificacion) {
 
 		ValidadorArgumento.validarCampoObligatorio(nombre, CAMPO_OBLIGATORIO);
 		ValidadorArgumento.validarCampoObligatorio(edad, CAMPO_OBLIGATORIO);
 		this.id = id;
 		this.nombre = nombre;
 		this.edad = edad;
+		this.numeroIdentificacion = numeroIdentificacion; 
 	}
 
 	public Persona() {
@@ -46,6 +49,14 @@ public class Persona {
 
 	public void setEdad(Integer edad) {
 		this.edad = edad;
+	}
+
+	public Integer getNumeroIdentificacion() {
+		return numeroIdentificacion;
+	}
+
+	public void setNumeroIdentificacion(Integer numeroIdentificacion) {
+		this.numeroIdentificacion = numeroIdentificacion;
 	}
 
 }

@@ -1,0 +1,31 @@
+<div class="create-container">  
+  <h1>
+      {{"forms.consultas_odontologicas" | translate}}
+  </h1>
+  <div class="form">
+    <form [formGroup]="myForm">
+      <div class="form-group">
+        <label>{{"forms.fecha_cita" | translate}}</label>
+        <input type="date" class="form-control" formControlName="fecha_cita" />
+        <span *ngIf="controlHasError('fecha_cita', 'required')">
+          <strong>{{ "validation.required_field" | translate }}</strong>
+        </span>
+      </div>           
+      <div class="form-group">
+        <label>{{"forms.persona" | translate}}</label>
+        <select  class="form-control" formControlName="persona">
+            <option *ngFor="let option of personas" [value]="option.id">
+              {{option.nombre}}
+            </option>
+          </select>
+        <span *ngIf="controlHasError('persona', 'required')">
+          <strong>{{ "validation.required_field" | translate }}</strong>
+        </span>
+      </div>  
+
+      <button class="btn btn-primary" (click)="store()">
+          {{"forms.save" | translate}}
+      </button>
+    </form>
+  </div>
+</div>

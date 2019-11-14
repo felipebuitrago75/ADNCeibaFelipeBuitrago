@@ -7,11 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "PERSONA")
 public class PersonaEntidad {
-
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,19 +21,23 @@ public class PersonaEntidad {
 	@Column(name = "EDAD", nullable = false)
 	private Integer edad;
 
+	@Column(name = "NUMERO_IDENTIFICACION", nullable = false)
+	private Integer numeroIdentificacion;
+
 	public Long getId() {
 		return id;
 	}
 
-	public PersonaEntidad(Long id, String nombre, Integer edad) {
-		//validaciones datos
+	public PersonaEntidad(Long id, String nombre, Integer edad, Integer numeroIdentificacion) {
+		// validaciones datos
 		this.id = id;
 		this.nombre = nombre;
 		this.edad = edad;
+		this.numeroIdentificacion = numeroIdentificacion;
 	}
 
 	public PersonaEntidad() {
-		
+
 	}
 
 	public void setId(Long id) {
@@ -58,8 +60,12 @@ public class PersonaEntidad {
 		this.edad = edad;
 	}
 
+	public Integer getNumeroIdentificacion() {
+		return numeroIdentificacion;
+	}
 
-
-
+	public void setNumeroIdentificacion(Integer numeroIdentificacion) {
+		this.numeroIdentificacion = numeroIdentificacion;
+	}
 
 }

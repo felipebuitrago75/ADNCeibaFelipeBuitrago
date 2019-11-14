@@ -1,0 +1,33 @@
+<div class="spacer20"></div>
+<div class="container">
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-10"><h1>{{"forms.personas" | translate}}</h1></div>
+      <div class="col-md-2">
+        <button class="btn btn-primary pull-right" routerLink="/crear-persona">
+          {{"forms.new" | translate}}
+        </button>
+      </div>
+    </div>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">{{"forms.name" | translate}}</th>
+        <th scope="col">{{"forms.identificacion" | translate}}</th>
+        <th scope="col">{{"forms.edad" | translate}}</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let persona of personas">
+        <td>{{ persona.nombre }}</td>
+        <td>{{ persona.numeroIdentificacion }}</td>
+        <td>{{ persona.edad }}</td>
+        <td>          
+          <button class="btn btn-danger" (click)="confirmDelete(persona.id)">{{"forms.delete" | translate}}</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,52 @@
+{
+  "menu": {
+   
+  },
+  "forms": {
+    "login": "Login",
+    "email": "Email",
+    "password": "Password",
+    "personas": "People",
+    "persona": "PERSON",
+    "spanish": "Spanish",
+    "english": "English",
+    "logout": "Logout",
+    "name": "NAME",
+    "edad": "AGE",
+    "identificacion": "ID",
+    "delete": "Remove",
+    "new": "New",
+    "personas_inscritas": "Registered Persons",
+    "consultas_odontologicas": "Date",
+    "cita_odontologica": "Create dental consultation",
+    "citas": "Dental Appointments",
+    "person_name": "NAME OF PERSON",
+    "save": "Save",
+    "editar_persona": "Edit person",
+    "crear_persona": "Create person",
+    "username": "Username",
+    "fecha_cita":"APPOINTMENT DATE",
+    "costo_cita":"COST APPOINTMENT",
+    "nombre_persona":"PERSON NAME"
+  },
+  "validation": {
+    "required_field": "This field is required"
+  },
+  "buttons": {
+    "ok": "OK",
+    "yes": "SI"
+  },
+  "alerts": {
+    "congratulations": "Congratulations!",
+    "confirm": "Confirm",
+    "error": "Error",
+    "deleted_book": "The person has been eliminated",
+    "sure_to_delete": "Are you sure to delete this record?",
+    "book_doesnt_exist":"The person does not exist",
+    "yes": "YES",
+    "cancel": "Cancel",
+    "important": "Important",
+    "success": "Success",
+    "stored_book":"Saved person"
+  }
+}

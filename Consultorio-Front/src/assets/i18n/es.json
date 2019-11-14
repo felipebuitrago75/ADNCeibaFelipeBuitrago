@@ -1,0 +1,56 @@
+{
+  "menu": {
+   
+  },
+  "forms": {
+    "login": "Iniciar sesión",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "personas": "Personas",
+    "persona": "PERSONA",
+    "spanish": "Español",
+    "english": "Inglés",
+    "logout": "Cerrar sesión",
+    "name": "NOMBRE",
+    "edad": "EDAD",
+    "identificacion": "IDENTIFICACION",
+    "delete": "Eliminar",
+    "new": "Nuevo",
+    "personas_inscritas": "Personas inscritas",
+    "consultas_odontologicas": "Citas",
+    "cita_odontologica": "Crear consulta odontologica",
+    "citas": "Citas odontologicas",
+    "person_name": "NOMBRE DE PERSONA",
+    "save": "Guardar",
+    "editar_persona": "Editar persona",
+    "crear_persona": "Crear persona",
+    "username": "Nombre de usuario",
+    "fecha_cita":"FECHA CITA",
+    "costo_cita":"COSTO CITA",
+    "nombre_persona":"NOMBRE PERSONA"
+  },
+  "validation": {
+    "required_field": "Este campo es requerido",
+    "incorrect_email_format": "Formato incorrecto de email",
+    "8_characters_minimum":"El tamaño debe ser de mínimo 8 caractéres"
+  },
+  "buttons": {
+    "ok": "OK",
+    "yes": "SI"
+  },
+  "alerts": {
+    "congratulations": "Felicitaciones!",
+    "confirm": "Confirmar",
+    "error": "Error",
+    "deleted_book": "La persona ha sido eliminada",
+    "sure_to_delete": "¿Está seguro de eliminar este registro?",
+    "book_doesnt_exist":"La persona no existe",
+    "yes": "Si",
+    "cancel": "Cancelar",
+    "important": "Importante",
+    "success": "Exito",
+    "upload_can_take_long": "La carga de las tarifas se hará en segundo plano y puede tomar varios minutos.",
+    "stored_book":"Persona guardada",
+    "not_login":"No puede iniciar sesión, intente más tarde"
+  }
+}

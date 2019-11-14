@@ -9,7 +9,8 @@ import com.ceiba.consultorio.dominio.modelo.Persona;
 public class FabricaPersona {
 
 	public Persona crearPersona(ComandoPersona comandoPersona) {
-		return new Persona(comandoPersona.getId(), comandoPersona.getNombre(), comandoPersona.getEdad());
+		return new Persona(comandoPersona.getId(), comandoPersona.getNombre(), comandoPersona.getEdad(),
+				comandoPersona.getNumeroIdentificacion());
 	}
 
 }
