@@ -58,7 +58,7 @@ export class PersonasComponent implements OnInit {
         this.getPersonas();
         swal({
           title: this.translate.instant("alerts.success"),
-          text: this.translate.instant("alerts.deleted_book"),
+          text: this.translate.instant("alerts.persona_eliminada"),
           type: "success",
           showCancelButton: false,
           confirmButtonColor: "#3085d6",

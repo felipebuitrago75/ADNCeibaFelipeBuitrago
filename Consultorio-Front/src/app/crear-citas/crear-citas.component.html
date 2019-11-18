@@ -14,7 +14,7 @@
       <div class="form-group">
         <label>{{"forms.persona" | translate}}</label>
         <select  class="form-control" formControlName="persona">
-            <option *ngFor="let option of personas" [value]="option.id">
+            <option *ngFor="let option of personas" [value]="option | json">
               {{option.nombre}}
             </option>
           </select>

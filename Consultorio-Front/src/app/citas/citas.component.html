@@ -2,7 +2,9 @@
 <div class="container">
   <div class="page-header">
     <div class="row">
-      <div class="col-md-10"><h1>{{"forms.citas" | translate}}</h1></div>
+      <div class="col-md-10">
+        <h1>{{"forms.citas" | translate}}</h1>
+      </div>
       <div class="col-md-2">
         <button class="btn btn-primary pull-right" routerLink="/crear-cita">
           {{"forms.new" | translate}}
@@ -22,8 +24,11 @@
     <tbody>
       <tr *ngFor="let cita of citas">
         <td>{{ cita.fechaCita | date }}</td>
-        <td>{{ cita.costo  }}</td>
-        <td>{{ cita.nombreUsuario }}</td>        
+        <td>{{ cita.costoCita|currency:'CAD':'symbol-narrow' }}</td>
+        <td>{{ cita.persona.nombre }}</td>
+        <td>
+          <button class="btn btn-danger" (click)="confirmDelete(cita.id)">{{"forms.delete" | translate}}</button>
+        </td>
       </tr>
     </tbody>
   </table>

@@ -49,11 +49,7 @@ export class CrearPersonasComponent implements OnInit {
 
   }
 
-  /**
-   * Stores or updates a book
-   *
-   *
-   */
+
   store() {
     let controls = this.myForm.controls;
     if (this.myForm.invalid) {
@@ -81,7 +77,7 @@ let data ={
         if (result) {          
           swal({
             title: this.translate.instant("alerts.success"),
-            text: this.translate.instant("alerts.stored_book"),
+            text: this.translate.instant("alerts.persona_guardada"),
             type: "success",
             showCancelButton: false,
             confirmButtonColor: "#3085d6",
@@ -111,12 +107,7 @@ let data ={
     );
   }
 
-  /**
-   * Validates whether a field follows the validation rules
-   *
-   * @param controlName nombre of the control being evaluated
-   * @param validationType type of the validation to be evaluated
-   */
+
   public controlHasError(controlName: string, validationType: string): boolean {
     const control = this.myForm.controls[controlName];
     if (!control) {

@@ -1,8 +1,8 @@
-package com.ceiba.consultorio.aplicacion.manejadores;
+package com.ceiba.consultorio.aplicacion.manejadores.persona;
 
 import org.springframework.stereotype.Service;
 
-import com.ceiba.consultorio.dominio.servicio.ServicioEliminarPersona;
+import com.ceiba.consultorio.dominio.servicio.persona.ServicioEliminarPersona;
 @Service
 public class ManejadorEliminarPersona {
 

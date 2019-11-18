@@ -33,17 +33,24 @@ export class CrearCitasComponent implements OnInit {
       return;
     }
 
-    const loanData = {      
+    const citaData = {
+      fechaCita: controls["fecha_cita"].value,
+      persona: controls["persona"].value
     };
-
-    let url = `citas/crear/${controls["fecha_cita"].value}/${controls["persona"].value}`;
-    this.service.queryPostRegular(url,loanData).subscribe(
+let data ={
+  "fechaCita":citaData.fechaCita,
+   "persona": JSON.parse(citaData.persona)
+  
+}
+    let url = `cita/agregarCita`;
+    let body =JSON.stringify(data);
+    this.service.queryPost(url, body).subscribe(
       response => {
         let result = response;
         if (result) {          
           swal({
             title: this.translate.instant("alerts.success"),
-            text: this.translate.instant("alerts.stored_loan"),
+            text: this.translate.instant("alerts.cita_guardada"),
             type: "success",
             showCancelButton: false,
             confirmButtonColor: "#3085d6",
@@ -51,34 +58,31 @@ export class CrearCitasComponent implements OnInit {
             confirmButtonText: this.translate.instant("buttons.ok"),            
           }).then(result => {
             
-          this.router.navigate(["/citas"]); 
+          this.router.navigate([""]); 
           });        
         } else {          
-         
+          swal({
+            title: this.translate.instant("alerts.error"),
+            text: this.translate.instant("alerts.cannot_delete_book"),
+            type: "error",
+            showCancelButton: false,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: this.translate.instant("buttons.ok"),            
+          }).then(result => {
+            return false;
+          });
         }
       },
       err => {
-        swal({
-          title: this.translate.instant("alerts.error"),
-          text: err.json().message,
-          type: "error",
-          showCancelButton: false,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          confirmButtonText: this.translate.instant("buttons.ok"),            
-        }).then(result => {
-          return false;
-        });
+        console.log(err);
       }
     );
   }
 
-  /**
-   * Validates whether a field follows the validation rules
-   *
-   * @param controlName name of the control being evaluated
-   * @param validationType type of the validation to be evaluated
-   */
+
+  
+
   public controlHasError(controlName: string, validationType: string): boolean {
     const control = this.myForm.controls[controlName];
     if (!control) {

@@ -1,17 +1,19 @@
-package com.ceiba.consultorio.aplicacion.manejadores;
+package com.ceiba.consultorio.aplicacion.manejadores.persona;
+
+import org.springframework.stereotype.Component;
 
 import com.ceiba.consultorio.aplicacion.comando.ComandoPersona;
 import com.ceiba.consultorio.aplicacion.fabrica.FabricaPersona;
 import com.ceiba.consultorio.dominio.modelo.Persona;
-import com.ceiba.consultorio.dominio.servicio.ServicioCrearPersona;
+import com.ceiba.consultorio.dominio.servicio.persona.ServicioCrearPersona;
 
-public class ManejadorActualizarPersona {
-
+@Component
+public class ManejadorCrearPersona {
 
 	private final ServicioCrearPersona servicioCrearPersona;
 	private final FabricaPersona fabricaPersona;
 
-	public ManejadorActualizarPersona(ServicioCrearPersona servicioCrearPersona, FabricaPersona fabricaPersona) {
+	public ManejadorCrearPersona(ServicioCrearPersona servicioCrearPersona, FabricaPersona fabricaPersona) {
 
 		this.servicioCrearPersona = servicioCrearPersona;
 		this.fabricaPersona = fabricaPersona;
@@ -21,5 +23,4 @@ public class ManejadorActualizarPersona {
 		Persona persona = this.fabricaPersona.crearPersona(comandoPersona);
 		this.servicioCrearPersona.ejecutar(persona);
 	}
-
 }

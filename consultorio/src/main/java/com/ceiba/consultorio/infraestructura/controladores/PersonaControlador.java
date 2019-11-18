@@ -1,4 +1,4 @@
-package com.ceiba.consultorio.infraestructura;
+package com.ceiba.consultorio.infraestructura.controladores;
 
 import java.util.List;
 
@@ -12,11 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ceiba.consultorio.aplicacion.comando.ComandoPersona;
-import com.ceiba.consultorio.aplicacion.manejadores.ManejadorActualizarPersona;
-import com.ceiba.consultorio.aplicacion.manejadores.ManejadorCrearPersona;
-import com.ceiba.consultorio.aplicacion.manejadores.ManejadorEliminarPersona;
-import com.ceiba.consultorio.aplicacion.manejadores.ManejadorObtenerPersona;
-import com.ceiba.consultorio.aplicacion.manejadores.ManejadorObtenerPersonas;
+import com.ceiba.consultorio.aplicacion.manejadores.persona.ManejadorCrearPersona;
+import com.ceiba.consultorio.aplicacion.manejadores.persona.ManejadorEliminarPersona;
+import com.ceiba.consultorio.aplicacion.manejadores.persona.ManejadorObtenerPersona;
+import com.ceiba.consultorio.aplicacion.manejadores.persona.ManejadorObtenerPersonas;
 
 @RestController
 @RequestMapping(value = "/consultorio")

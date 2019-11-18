@@ -36,21 +36,23 @@
   },
   "buttons": {
     "ok": "OK",
-    "yes": "SI"
+    "yes": "SI",
+    "cancel": "Cancelar"
   },
   "alerts": {
     "congratulations": "Felicitaciones!",
     "confirm": "Confirmar",
     "error": "Error",
-    "deleted_book": "La persona ha sido eliminada",
+    "persona_eliminada": "La persona ha sido eliminada",
+    "cita_eliminada": "La cita ha sido eliminada",
     "sure_to_delete": "¿Está seguro de eliminar este registro?",
     "book_doesnt_exist":"La persona no existe",
     "yes": "Si",
     "cancel": "Cancelar",
     "important": "Importante",
     "success": "Exito",
-    "upload_can_take_long": "La carga de las tarifas se hará en segundo plano y puede tomar varios minutos.",
-    "stored_book":"Persona guardada",
+    "persona_guardada":"Persona guardada",
+    "cita_guardada":"Cita guardada",
     "not_login":"No puede iniciar sesión, intente más tarde"
   }
 }

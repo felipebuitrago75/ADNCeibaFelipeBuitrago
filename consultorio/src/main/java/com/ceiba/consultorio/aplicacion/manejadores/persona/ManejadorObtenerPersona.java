@@ -1,9 +1,9 @@
-package com.ceiba.consultorio.aplicacion.manejadores;
+package com.ceiba.consultorio.aplicacion.manejadores.persona;
 
 import org.springframework.stereotype.Service;
 
 import com.ceiba.consultorio.aplicacion.comando.ComandoPersona;
-import com.ceiba.consultorio.dominio.servicio.ServicioObtenerPersona;
+import com.ceiba.consultorio.dominio.servicio.persona.ServicioObtenerPersona;
 
 @Service
 public class ManejadorObtenerPersona {

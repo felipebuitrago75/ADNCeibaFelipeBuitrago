@@ -1,4 +1,4 @@
-package com.ceiba.consultorio.dominio.servicio;
+package com.ceiba.consultorio.dominio.servicio.persona;
 
 import org.springframework.stereotype.Service;
 

@@ -34,19 +34,22 @@
   },
   "buttons": {
     "ok": "OK",
-    "yes": "SI"
+    "yes": "Yes",
+    "cancel": "Cancel"
   },
   "alerts": {
     "congratulations": "Congratulations!",
     "confirm": "Confirm",
     "error": "Error",
-    "deleted_book": "The person has been eliminated",
+    "persona_eliminada": "The person has been eliminated",
+    "cita_eliminada": "The Appointment has been eliminated",
     "sure_to_delete": "Are you sure to delete this record?",
     "book_doesnt_exist":"The person does not exist",
     "yes": "YES",
     "cancel": "Cancel",
     "important": "Important",
     "success": "Success",
-    "stored_book":"Saved person"
+    "persona_guardada":"Saved person",
+    "cita_guardada":"Saved appointment"
   }
 }

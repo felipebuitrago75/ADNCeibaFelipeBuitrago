@@ -4,6 +4,7 @@ plugins {
 	id 'jacoco'
 	id 'java'
 	id "org.sonarqube" version "2.7"
+	id "net.foragerr.jmeter" version "1.1.0-4.0"
 }
 
 group = 'com.ceiba'
@@ -51,6 +52,11 @@ dependencies {
 test {
 	useJUnitPlatform()
 	dependsOn 'cleanTest'
+}
+jmeter {
+testFileDir = file("src/test/jmeter") //a custom directory for jmx files
+enableReports = true
+enableExtendedReports = false
 }
 sonarqube {
 	properties {
