@@ -33,7 +33,7 @@ public class Utilitarios {
 		return 0.0;
 	}
 
-	private boolean calcularIdentificacionPalindromo(String numeroIdentificacion) {
+	public boolean calcularIdentificacionPalindromo(String numeroIdentificacion) {
 		boolean valor = true;
 		int i;
 		int indice;
@@ -56,7 +56,7 @@ public class Utilitarios {
 		return valor;
 	}
 
-	private Double calcularCostoPorcentualDescuento(LocalDate fechaCita) {
+	public Double calcularCostoPorcentualDescuento(LocalDate fechaCita) {
 		DayOfWeek day = DayOfWeek.of(fechaCita.get(ChronoField.DAY_OF_WEEK));
 		switch (day) {
 		case MONDAY:
