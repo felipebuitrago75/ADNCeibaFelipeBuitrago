@@ -69,7 +69,7 @@ let data ={
   "edad":personaData.edad,
   "numeroIdentificacion":personaData.identificacion
 }
-    let url = `consultorio/agregarPersona`;
+    let url = `/api/consultorio/agregarPersona`;
     let body =JSON.stringify(data);
     this.service.queryPost(url, body).subscribe(
       response => {

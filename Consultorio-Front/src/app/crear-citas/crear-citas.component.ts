@@ -42,7 +42,7 @@ let data ={
    "persona": JSON.parse(citaData.persona)
   
 }
-    let url = `cita/agregarCita`;
+    let url = `/api/cita/agregarCita`;
     let body =JSON.stringify(data);
     this.service.queryPost(url, body).subscribe(
       response => {
@@ -95,7 +95,7 @@ let data ={
   }
 
   private getPersonas() {
-    let url = `consultorio/obtenerPersonas`;
+    let url = `/api/consultorio/obtenerPersonas`;
     this.service.queryExternalApi(url).subscribe(response => {
       let result = response.json();
       if (result) {

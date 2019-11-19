@@ -19,7 +19,7 @@ export class PersonasComponent implements OnInit {
   }
   
   private getPersonas() {
-    let url = `consultorio/obtenerPersonas`;
+    let url = `/api/consultorio/obtenerPersonas`;
     this.service.queryExternalApi(url).subscribe(response => {
       let result = response.json();
       if (result) {
@@ -51,7 +51,7 @@ export class PersonasComponent implements OnInit {
   }
 
   private deleteBook(id) {
-    let url = `/consultorio/eliminarPersona/${id}`;
+    let url = `/api/consultorio/eliminarPersona/${id}`;
     this.service.queryDeleteRegular(url).subscribe(response => {
       let result = response;
       if (result) {

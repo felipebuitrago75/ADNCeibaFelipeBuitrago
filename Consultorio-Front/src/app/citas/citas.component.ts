@@ -17,7 +17,7 @@ export class CitasComponent implements OnInit {
   }
 
   private getCitas(){
-    let url = `cita/obtenerCitas`;
+    let url = `/api/cita/obtenerCitas`;
     this.service.queryExternalApi(url).subscribe(
       response => {
         let result = response.json();
@@ -51,7 +51,7 @@ export class CitasComponent implements OnInit {
   }
 
   private deleteCita(id) {
-    let url = `/cita/eliminarCita/${id}`;
+    let url = `/api//cita/eliminarCita/${id}`;
     this.service.queryDeleteRegular(url).subscribe(response => {
       let result = response;
       if (result) {

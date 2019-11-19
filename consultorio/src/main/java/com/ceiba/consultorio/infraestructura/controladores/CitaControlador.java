@@ -37,28 +37,24 @@ public class CitaControlador {
 		this.manejadorObtenerCita = manejadorObtenerCita;
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/agregarCita")
 	public void agregarCita(@RequestBody ComandoCita comandoCita) {
 		this.manejadorCrearCita.ejecutar(comandoCita);
 
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@DeleteMapping("/eliminarCita/{ID}")
 	public void eliminarCita(@PathVariable(name = "ID") Long id) {
 		this.manejadorEliminarCita.ejecutar(id);
 
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/obtenerCitas")
 	public List<ComandoCita> obtenerCitas() {
 		return this.manejadorObtenerCitas.ejecutar();
 
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/buscarCita/{ID}")
 	public ComandoCita buscarCita(@PathVariable(name = "ID") Long id) {
 		return this.manejadorObtenerCita.ejecutar(id);
