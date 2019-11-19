@@ -38,4 +38,20 @@ public class PersonaControladorTest {
 		assertDoesNotThrow(() -> service.eliminarPersona(1L));
 
 	}
+
+	@Test
+	void buscarPersona() {
+		PersonaControlador service = new PersonaControlador(manejadorCrearPersona, manejadorEliminarPersona,
+				manejadorObtenerPersonas, manejadorObtenerPersona);
+		assertDoesNotThrow(() -> service.buscarPersona(1L));
+
+	}
+
+	@Test
+	void buscarPersonas() {
+		PersonaControlador service = new PersonaControlador(manejadorCrearPersona, manejadorEliminarPersona,
+				manejadorObtenerPersonas, manejadorObtenerPersona);
+		assertDoesNotThrow(() -> service.obtenerPersonas());
+
+	}
 }

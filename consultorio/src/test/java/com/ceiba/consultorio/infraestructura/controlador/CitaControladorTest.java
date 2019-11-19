@@ -38,4 +38,22 @@ public class CitaControladorTest {
 		assertDoesNotThrow(() -> service.eliminarCita(1L));
 
 	}
+
+	@Test
+	void BuscarCita() {
+
+		CitaControlador service = new CitaControlador(manejadorCrearCita, manejadorEliminarCita, manejadorObtenerCitas,
+				manejadorObtenerCita);
+
+		assertDoesNotThrow(() -> service.buscarCita(1L));
+	}
+
+	@Test
+	void buscarCitas() {
+
+		CitaControlador service = new CitaControlador(manejadorCrearCita, manejadorEliminarCita, manejadorObtenerCitas,
+				manejadorObtenerCita);
+
+		assertDoesNotThrow(() -> service.obtenerCitas());
+	}
 }
