@@ -17,7 +17,6 @@ public class ComandoPersona {
 	private Integer numeroIdentificacion;
 
 	public ComandoPersona(Long id, String nombre, Integer edad, Integer numeroIdentificacion) {
-		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.edad = edad;

@@ -22,7 +22,7 @@ public class PersonaControladorTest {
 	private ManejadorObtenerPersonas manejadorObtenerPersonas = mock(ManejadorObtenerPersonas.class);
 
 	@Test
-	void agregarUPersona() {
+	void agregarPersona() {
 		ComandoPersona persona = new ComandoPersonaDataBuilder().build();
 
 		PersonaControlador service = new PersonaControlador(manejadorCrearPersona, manejadorEliminarPersona,

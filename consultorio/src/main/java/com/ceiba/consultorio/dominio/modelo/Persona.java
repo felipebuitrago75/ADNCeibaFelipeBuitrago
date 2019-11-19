@@ -24,10 +24,11 @@ public class Persona {
 		this.id = id;
 		this.nombre = nombre;
 		this.edad = edad;
-		this.numeroIdentificacion = numeroIdentificacion; 
+		this.numeroIdentificacion = numeroIdentificacion;
 	}
 
-
+	public Persona() {
+	}
 
 	public void setId(Long id) {
 		this.id = id;
