@@ -32,6 +32,7 @@ public class RepositorioPersonaImpl implements RepositorioPersona {
 
 	@Override
 	public void eliminar(Long id) {
+
 		repositorioPersonaJpa.deleteById(id);
 	}
 

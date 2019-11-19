@@ -1,5 +1,11 @@
 package com.ceiba.consultorio.aplicacion.comando;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class ComandoPersona {
 
 	private Long id;
@@ -7,11 +13,8 @@ public class ComandoPersona {
 	private String nombre;
 
 	private Integer edad;
-	
+
 	private Integer numeroIdentificacion;
-
-
-
 
 	public ComandoPersona(Long id, String nombre, Integer edad, Integer numeroIdentificacion) {
 		super();
@@ -21,11 +24,8 @@ public class ComandoPersona {
 		this.numeroIdentificacion = numeroIdentificacion;
 	}
 
-
 	public ComandoPersona() {
-		super();
 	}
-
 
 	public Long getId() {
 		return id;
@@ -34,7 +34,6 @@ public class ComandoPersona {
 	public String getNombre() {
 		return nombre;
 	}
-
 
 	public Integer getEdad() {
 		return edad;
@@ -59,7 +58,5 @@ public class ComandoPersona {
 	public void setNumeroIdentificacion(Integer numeroIdentificacion) {
 		this.numeroIdentificacion = numeroIdentificacion;
 	}
-
-
 
 }

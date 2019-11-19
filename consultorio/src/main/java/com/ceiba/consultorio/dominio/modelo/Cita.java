@@ -16,7 +16,7 @@ public class Cita {
 	private Persona persona;
 
 	public Cita(Long id, LocalDate fechaCita, Double costoCita, Persona persona) {
-		super();
+		
 		ValidadorArgumento.validarCampoObligatorio(fechaCita, CAMPO_OBLIGATORIO);
 		ValidadorArgumento.validarCampoObligatorio(persona, CAMPO_OBLIGATORIO);
 		this.id = id;
@@ -25,9 +25,7 @@ public class Cita {
 		this.persona = persona;
 	}
 
-	public Cita() {
 
-	}
 
 	public Long getId() {
 		return id;

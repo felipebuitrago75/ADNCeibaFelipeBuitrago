@@ -2,12 +2,9 @@ package com.ceiba.consultorio.dominio.servicio.persona;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
-
 import com.ceiba.consultorio.aplicacion.comando.ComandoPersona;
 import com.ceiba.consultorio.dominio.puerto.repositorio.RepositorioPersona;
 
-@Service
 public class ServicioObtenerPersonas {
 
 	private RepositorioPersona repositorioPersona;

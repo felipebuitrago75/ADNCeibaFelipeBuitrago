@@ -1,11 +1,8 @@
 package com.ceiba.consultorio.dominio.servicio.cita;
 
-import org.springframework.stereotype.Service;
-
 import com.ceiba.consultorio.aplicacion.comando.ComandoCita;
 import com.ceiba.consultorio.dominio.puerto.repositorio.RepositorioCita;
 
-@Service
 public class ServicioObtenerCita {
 
 	private RepositorioCita repositorioCita;

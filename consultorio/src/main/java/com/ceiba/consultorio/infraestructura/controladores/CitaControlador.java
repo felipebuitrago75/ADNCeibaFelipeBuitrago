@@ -31,7 +31,6 @@ public class CitaControlador {
 
 	public CitaControlador(ManejadorCrearCita manejadorCrearCita, ManejadorEliminarCita manejadorEliminarCita,
 			ManejadorObtenerCitas manejadorObtenerCitas, ManejadorObtenerCita manejadorObtenerCita) {
-		super();
 		this.manejadorCrearCita = manejadorCrearCita;
 		this.manejadorEliminarCita = manejadorEliminarCita;
 		this.manejadorObtenerCitas = manejadorObtenerCitas;

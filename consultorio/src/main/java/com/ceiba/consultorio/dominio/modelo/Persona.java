@@ -27,9 +27,7 @@ public class Persona {
 		this.numeroIdentificacion = numeroIdentificacion; 
 	}
 
-	public Persona() {
 
-	}
 
 	public void setId(Long id) {
 		this.id = id;

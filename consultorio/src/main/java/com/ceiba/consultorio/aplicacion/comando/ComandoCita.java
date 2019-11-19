@@ -15,9 +15,6 @@ public class ComandoCita {
 
 	}
 
-	public ComandoCita() {
-
-	}
 
 	public Long getId() {
 		return id;
