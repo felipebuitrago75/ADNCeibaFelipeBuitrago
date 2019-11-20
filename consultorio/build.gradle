@@ -4,6 +4,7 @@ id 'org.springframework.boot' version '2.2.0.RELEASE'
 	id 'jacoco'
 	id 'java'
 	id "org.sonarqube" version "2.7"
+	id "net.foragerr.jmeter" version "1.1.0-4.0"
 }
 
 group = 'com.ceiba'
@@ -64,4 +65,9 @@ sonarqube {
 		property "sonar.jacoco.reportPaths", "build/jacoco/test.exec"
 		property "sonar.junit.reportPaths", "build/test-results/test"
 	}
+}
+jmeter {
+  jmTestFiles = [file("src/test/jmeter/Default.jmx")] //if jmx file is not in the default location
+  enableReports = true
+  enableExtendedReports = true
 }
