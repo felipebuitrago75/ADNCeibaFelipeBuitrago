@@ -1,6 +1,7 @@
 package com.ceiba.consultorio.aplicacion.manejadores.cita;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ceiba.consultorio.dominio.servicio.cita.ServicioEliminarCita;
 
@@ -14,6 +15,7 @@ public class ManejadorEliminarCita {
 		this.servicioEliminarCita = servicioEliminarCita;
 	}
 
+	@Transactional
 	public void ejecutar(Long id) {
 		this.servicioEliminarCita.ejecutar(id);
 	}

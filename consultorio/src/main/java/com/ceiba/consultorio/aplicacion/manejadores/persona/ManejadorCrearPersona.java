@@ -1,6 +1,7 @@
 package com.ceiba.consultorio.aplicacion.manejadores.persona;
 
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.ceiba.consultorio.aplicacion.comando.ComandoPersona;
 import com.ceiba.consultorio.aplicacion.fabrica.FabricaPersona;
@@ -19,6 +20,7 @@ public class ManejadorCrearPersona {
 		this.fabricaPersona = fabricaPersona;
 	}
 
+	@Transactional
 	public void ejecutar(ComandoPersona comandoPersona) {
 		Persona persona = this.fabricaPersona.crearPersona(comandoPersona);
 		this.servicioCrearPersona.ejecutar(persona);
