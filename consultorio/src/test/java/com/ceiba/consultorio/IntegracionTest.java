@@ -37,7 +37,7 @@ public class IntegracionTest {
 	private RepositorioCitaImpl repositorioCitaImpl;
 
 	@Test
-	public void guardarPersona() {
+	public void guardarCita() {
 		Persona persona = new PersonaDataBuilder().build();
 
 		repositorioPersonaImpl.guardar(persona);
