@@ -15,16 +15,16 @@ import {
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { PersonasComponent } from "./personas/personas.component";
-import { LayoutComponent } from "./layout/layout.component";
-import { CrearPersonasComponent } from "./crear-personas/crear-personas.component";
+import { PersonasComponent } from "./feature/personas/personas.component";
+import { LayoutComponent } from "./feature/layout/layout.component";
+import { CrearPersonasComponent } from "./feature/crear-personas/crear-personas.component";
 import { esLocale } from "ngx-bootstrap/locale";
 import { defineLocale } from "ngx-bootstrap/chronos";
 import es from "@angular/common/locales/es";
 import { registerLocaleData } from "@angular/common";
 import { LOCALE_ID } from "@angular/core";
-import { CrearCitasComponent } from './crear-citas/crear-citas.component';
-import { CitasComponent } from './citas/citas.component';
+import { CrearCitasComponent } from './feature/crear-citas/crear-citas.component';
+import { CitasComponent } from './feature/citas/citas.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 defineLocale("es", esLocale);
 registerLocaleData(es);

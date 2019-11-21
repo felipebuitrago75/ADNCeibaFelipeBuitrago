@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {  Cita } from '../interfaces/cita';
-import { RestService } from '../services/rest.service';
+import {  Cita } from '../../interfaces/cita';
+import { RestService } from '../../core/services/rest.service';
 import { TranslateService } from '@ngx-translate/core';
 import swal from "sweetalert2";
 @Component({

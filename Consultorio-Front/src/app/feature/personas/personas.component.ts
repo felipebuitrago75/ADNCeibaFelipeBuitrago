@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RestService } from '../../core/services/rest.service';
-import { Persona } from '../../interfaces/persona';
+import { Persona } from '../../shared/interfaces/persona';
 import swal from "sweetalert2";
 import { TranslateService } from '@ngx-translate/core';
 @Component({

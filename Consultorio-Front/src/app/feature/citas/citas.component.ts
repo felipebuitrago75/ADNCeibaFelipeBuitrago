@@ -1,38 +1,38 @@
 import { Component, OnInit } from '@angular/core';
+import {  Cita } from '../../shared/interfaces/cita';
 import { RestService } from '../../core/services/rest.service';
-import { Persona } from '../../interfaces/persona';
-import swal from "sweetalert2";
 import { TranslateService } from '@ngx-translate/core';
+import swal from "sweetalert2";
 @Component({
-  selector: 'app-personas',
-  templateUrl: './personas.component.html',
-  styleUrls: ['./personas.component.scss']
+  selector: 'app-citas',
+  templateUrl: './citas.component.html',
+  styleUrls: ['./citas.component.scss']
 })
-export class PersonasComponent implements OnInit {
-  public personas: Persona[] = [];
-  public page: number = 1;
-  public pageSize: number = 4;
-  public collectionSize: number = this.personas.length;
-  constructor(private service: RestService, public translate: TranslateService) { }
+export class CitasComponent implements OnInit {
+  public citas: Cita[] = [];
+  constructor(private service:RestService, public translate: TranslateService) { }
+
   ngOnInit() {
-    this.getPersonas();
-  }
-  
-  private getPersonas() {
-    let url = `/api/consultorio/obtenerPersonas`;
-    this.service.queryExternalApi(url).subscribe(response => {
-      let result = response.json();
-      if (result) {
-        this.personas = result;
-      }
-      else {
-        console.log('error');
-      }
-    }, err => {
-      console.log(err);
-    });
+    this.getCitas();
   }
 
+  private getCitas(){
+    let url = `/api/cita/obtenerCitas`;
+    this.service.queryExternalApi(url).subscribe(
+      response => {
+        let result = response.json();
+        if (result) {
+          this.citas = result;
+        
+        } else {          
+          console.log('error');
+        }
+      },
+      err => {
+        console.log(err);
+      }
+    ); 
+  }
   confirmDelete(id) {
     swal({
       title: this.translate.instant("alerts.confirm"),
@@ -45,20 +45,20 @@ export class PersonasComponent implements OnInit {
       cancelButtonText: this.translate.instant("buttons.cancel")
     }).then(result => {
       if (result.value) {
-        this.deleteBook(id);
+        this.deleteCita(id);
       }
     });
   }
 
-  private deleteBook(id) {
-    let url = `/api/consultorio/eliminarPersona/${id}`;
+  private deleteCita(id) {
+    let url = `/api//cita/eliminarCita/${id}`;
     this.service.queryDeleteRegular(url).subscribe(response => {
       let result = response;
       if (result) {
-        this.getPersonas();
+        this.getCitas();
         swal({
           title: this.translate.instant("alerts.success"),
-          text: this.translate.instant("alerts.persona_eliminada"),
+          text: this.translate.instant("alerts.cita_eliminada"),
           type: "success",
           showCancelButton: false,
           confirmButtonColor: "#3085d6",

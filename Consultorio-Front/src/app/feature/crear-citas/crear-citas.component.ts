@@ -4,7 +4,7 @@ import { RestService } from '../../core/services/rest.service';
 import { TranslateService } from '@ngx-translate/core';
 import swal from "sweetalert2";
 import { Router } from '@angular/router';
-import { Persona } from '../../interfaces/persona';
+import { Persona } from '../../shared/interfaces/persona';
 
 @Component({
   selector: 'app-crear-citas',
