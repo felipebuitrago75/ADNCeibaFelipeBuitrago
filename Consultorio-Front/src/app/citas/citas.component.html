@@ -6,7 +6,7 @@
         <h1>{{"forms.citas" | translate}}</h1>
       </div>
       <div class="col-md-2">
-        <button class="btn btn-primary pull-right" routerLink="/crear-cita">
+        <button class="btn btn-primary pull-right" id="botonNuevo" routerLink="/crear-cita">
           {{"forms.new" | translate}}
         </button>
       </div>
@@ -27,7 +27,7 @@
         <td>{{ cita.costoCita|currency:'CAD':'symbol-narrow' }}</td>
         <td>{{ cita.persona.nombre }}</td>
         <td>
-          <button class="btn btn-danger" (click)="confirmDelete(cita.id)">{{"forms.delete" | translate}}</button>
+          <button class="btn btn-danger" id="botonEliminar" (click)="confirmDelete(cita.id)">{{"forms.delete" | translate}}</button>
         </td>
       </tr>
     </tbody>

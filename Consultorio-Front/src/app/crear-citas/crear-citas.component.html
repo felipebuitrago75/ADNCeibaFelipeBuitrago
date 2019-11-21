@@ -6,7 +6,7 @@
     <form [formGroup]="myForm">
       <div class="form-group">
         <label>{{"forms.fecha_cita" | translate}}</label>
-        <input type="date" class="form-control" formControlName="fecha_cita" />
+        <input type="date" class="form-control" formControlName="fecha_cita" id="campoFecha"/>
         <span *ngIf="controlHasError('fecha_cita', 'required')">
           <strong>{{ "validation.required_field" | translate }}</strong>
         </span>
@@ -23,7 +23,7 @@
         </span>
       </div>  
 
-      <button class="btn btn-primary" (click)="store()">
+      <button class="btn btn-primary" id="botonCrearCita" (click)="store()">
           {{"forms.save" | translate}}
       </button>
     </form>

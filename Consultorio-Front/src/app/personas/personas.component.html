@@ -25,7 +25,7 @@
         <td>{{ persona.numeroIdentificacion }}</td>
         <td>{{ persona.edad }}</td>
         <td>          
-          <button class="btn btn-danger" (click)="confirmDelete(persona.id)">{{"forms.delete" | translate}}</button>
+          <button class="btn btn-danger" id="botonEliminar" (click)="confirmDelete(persona.id)">{{"forms.delete" | translate}}</button>
         </td>
       </tr>
     </tbody>
